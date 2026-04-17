@@ -1,0 +1,41 @@
+pipeline:
+  name: "Hadoop-ETL-Pipeline"
+  version: "1.0.0"
+  batch_size: 10000
+  tables:
+    - customers
+    - transactions
+    - products
+
+source:
+  type: "postgresql"
+  connection_string: "postgresql://user:password@localhost:5432/sourcedb"
+  tables:
+    customers:
+      schema:
+        customer_id: "int64"
+        age: "float64"
+        signup_date: "datetime64[ns]"
+      outlier_columns:
+        - age
+        - account_balance
+      partition_col: "country"
+    transactions:
+      schema:
+        transaction_id: "int64"
+        amount: "float64"
+        transaction_date: "datetime64[ns]"
+      outlier_columns:
+        - amount
+      partition_col: "transaction_date"
+
+target:
+  type: "hdfs"
+  output_path: "data/output"
+  compression: "snappy"
+  format: "parquet"
+
+disaster_recovery:
+  backup_path: "data/backup"
+  retention_days: 30
+  replicas: 3
