@@ -12,21 +12,21 @@ This pipeline addresses the core challenge of moving enterprise
 relational data into big data infrastructure for large-scale
 analytics. It handles batch extraction, data cleansing,
 schema normalization, outlier treatment, and partitioned
-Parquet loading — all with built-in benchmarking.
+Parquet loading all with built-in benchmarking.
 
 ## Features
 
-- **RDBMS Extraction** — Full table, custom query, and incremental
+- **RDBMS Extraction** - Full table, custom query, and incremental
   extraction from PostgreSQL/MySQL with batch processing
-- **Data Transformation** — Null handling, duplicate removal,
+- **Data Transformation** - Null handling, duplicate removal,
   outlier treatment, type casting, and column normalization
-- **Hadoop-Ready Loading** — Parquet with Snappy compression,
+- **Hadoop-Ready Loading** - Parquet with Snappy compression,
   Hive-compatible partitioning, and columnar optimization
-- **ETL Metadata** — Lineage tracking with source, timestamp,
+- **ETL Metadata** - Lineage tracking with source, timestamp,
   and version columns on every row
-- **Performance Benchmarking** — Extract/transform/load timing
+- **Performance Benchmarking** - Extract/transform/load timing
   and throughput reporting per pipeline run
-- **Data Validation** — Row count verification between source
+- **Data Validation** - Row count verification between source
   and target after every load
 
 ## Tech Stack
@@ -81,7 +81,3 @@ pytest tests/ -v
 | customers | 500K | 4.2s | 1.8s | 0.9s | 6.9s |
 | transactions | 2M | 18.1s | 6.3s | 3.2s | 27.6s |
 
-## Related AmEx Projects
-
-- [AWS-Disaster-Recovery-Framework](../AWS-Disaster-Recovery-Framework)
-- [RDBMS-Hadoop-Integration-Pipeline](../RDBMS-Hadoop-Integration-Pipeline)
