@@ -1,7 +1,7 @@
 # Hadoop ETL Pipeline
 
 End-to-end ETL pipeline integrating RDBMS systems with the
-Hadoop ecosystem — extracts from MySQL/PostgreSQL, transforms
+Hadoop ecosystem extracts from MySQL/PostgreSQL, transforms
 with data quality checks, and loads to HDFS-compatible Parquet
 columnar storage with performance benchmarking and disaster
 recovery support.
